@@ -4,14 +4,17 @@ RawBT requires PHP 5.4.0+ to run.
 The utility is distributed as a Phar package.
 
 ## Installing on user PC
-0. Install PHP (if not installed yet)
+- Install PHP (if not installed yet)
+- Download last release from https://github.com/402d/rawbt_ws_server/releases
+- Unpack
+- Copy files from dist folder
+- Rename one from examples config
+- Edit connect params
+- Run server (rawbt.bat - The application starts in a minimized window)
 
-1. Download last release from https://github.com/402d/rawbt_ws_server/releases
-2. Unpack
-3. Copy files from dist folder
-4. Rename one from examples config
-5. Edit connect params
-6. Run server (rawbt)
+![screenshot](https://cdn.jsdelivr.net/gh/402d/rawbt_ws_server@dfe92065d7cec2f2555f350f40f7c396d86da7ca/doc/screenshot.png)
+ 
+- Add bat file to startup
  
 ## Front-end 
 https://rawbt.ru/mike42/example_rawbt/
