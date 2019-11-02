@@ -1,0 +1,10 @@
+{
+    "name": "402d/rawbt_ws_server",
+    "description": "Websoket Server for ESC/POS Printers",
+    "require": {
+        "hoa/websocket": "3.17.01.09",
+        "mike42/escpos-php": "^2.0",
+        "php": ">=5.4.0",
+        "hassankhan/config": "^2.1"
+    }
+}

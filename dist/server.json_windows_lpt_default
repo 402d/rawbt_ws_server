@@ -1,0 +1,8 @@
+{
+"PrintConnector": {
+ "Type":"Windows",
+ "Params":{
+  "dest":"LPT1"
+ }
+}
+}

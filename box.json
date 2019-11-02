@@ -1,0 +1,8 @@
+{
+  "chmod": "0755",
+  "files": ["src/server.php"],
+  "directories": ["vendor"],
+  "main": "src/server.php",
+  "output": "dist/rawbt.phar",
+  "stub": true
+}
