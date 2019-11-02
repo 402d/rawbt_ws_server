@@ -15,6 +15,8 @@ The utility is distributed as a Phar package.
 ![screenshot](https://cdn.jsdelivr.net/gh/402d/rawbt_ws_server@dfe92065d7cec2f2555f350f40f7c396d86da7ca/doc/screenshot.png)
  
 - Add bat file to startup
+
+*In the /doc directory you can find a useful utility (TrayIt) that can hide the window of a running server.* 
  
 ## Front-end 
 https://rawbt.ru/mike42/example_rawbt/
