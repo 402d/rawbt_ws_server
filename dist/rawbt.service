@@ -1,0 +1,12 @@
+[Unit]
+Description=RawBT Print Server
+
+[Service]
+User=CHANGE_ME
+Group=CHANGE_ME
+Restart=always
+WorkingDirectory=/opt/rawbt
+ExecStart=/usr/bin/php /opt/rawbt/rawbt.phar
+
+[Install]
+WantedBy=multi-user.target
