@@ -44,17 +44,22 @@ try {
 
         $conf = Config::load('server.json');
 
-        if ($conf->get('PrintConnector.Type') == 'Network') {
-            set_time_limit($conf->get('PrintConnector.Params.timeout', 10) + 10);
-            $connector = new NetworkPrintConnector($conf->get('PrintConnector.Params.ip', '127.0.0.1'), $conf->get('PrintConnector.Params.port', 9100), $conf->get('PrintConnector.Params.timeout', 10));
-        } elseif ($conf->get('PrintConnector.Type') == 'Uri') {
-            $connector = UriPrintConnector::get($conf->get('PrintConnector.Params.uri', 'tcp://127.0.0.1:9100'));
-        } elseif ($conf->get('PrintConnector.Type') == 'Cups') {
-            $connector = new CupsPrintConnector($conf->get('PrintConnector.Params.dest'));
-        } elseif ($conf->get('PrintConnector.Type') == 'File') {
-            $connector = new FilePrintConnector($conf->get('PrintConnector.Params.filename'));
-        } else { // 'Windows'
-            $connector = new WindowsPrintConnector($conf->get('PrintConnector.Params.dest', 'LPT1'));
+        switch ($conf->get('PrintConnector.Type')) {
+            case 'Network':
+                set_time_limit($conf->get('PrintConnector.Params.timeout', 10) + 10);
+                $connector = new NetworkPrintConnector($conf->get('PrintConnector.Params.ip', '127.0.0.1'), $conf->get('PrintConnector.Params.port', 9100), $conf->get('PrintConnector.Params.timeout', 10));
+                break;
+            case 'Uri':
+                $connector = UriPrintConnector::get($conf->get('PrintConnector.Params.uri', 'tcp://127.0.0.1:9100'));
+                break;
+            case 'Cups':
+                $connector = new CupsPrintConnector($conf->get('PrintConnector.Params.dest'));
+                break;
+            case 'File':
+                $connector = new FilePrintConnector($conf->get('PrintConnector.Params.filename'));
+                break;
+            default:
+                $connector = new WindowsPrintConnector($conf->get('PrintConnector.Params.dest', 'LPT1'));
         }
         $connector->write($toprint);
         $connector->finalize();
