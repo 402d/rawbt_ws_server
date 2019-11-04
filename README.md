@@ -10,7 +10,20 @@ The utility is distributed as a Phar package.
 - Copy files from dist folder
 - Rename one from examples config
 - Edit connect params
+
+#### For Windows
 - Run server (rawbt.bat - The application starts in a minimized window)
+
+#### For Linux
+- php rawbt.phar
+
+#### For Linux (run as daemon)
+- copy rawbt.service to /etc/systemd/system/rawbt.service
+- edit User, Group (don't run it as root), WorkingDirectory and ExecStart 
+- sudo systemctl daemon-reload
+- sudo systemctl enable rawbt.service
+- sudo systemctl start rawbt.service
+
 
 ![screenshot](https://cdn.jsdelivr.net/gh/402d/rawbt_ws_server@dfe92065d7cec2f2555f350f40f7c396d86da7ca/doc/screenshot.png)
  
